@@ -1,2 +1,5 @@
 /.python-version
 /.env
+/.vscode
+__pycache__
+*.py[co]

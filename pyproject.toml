@@ -9,10 +9,16 @@ license = "MIT"
 python = "^3.8"
 django = "^3.1"
 djangorestframework = "^3.11.1"
+django-environ = "^0.4.5"
+psycopg2-binary = "^2.8.5"
+psutil = "^5.7.2"
+django-extensions = "^3.0.5"
+humanize = "^2.6.0"
 
 [tool.poetry.dev-dependencies]
 ipython = "^7.17.0"
 ipdb = "^0.13.3"
+black = {version = "^19.10b0", allow-prereleases = true}
 
 [build-system]
 requires = ["poetry>=0.12"]
