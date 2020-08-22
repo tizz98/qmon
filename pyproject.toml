@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "qmon"
+version = "0.1.0"
+description = "Simple server monitor"
+authors = ["Elijah Wilson <dev.tizz98@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+django = "^3.1"
+djangorestframework = "^3.11.1"
+
+[tool.poetry.dev-dependencies]
+ipython = "^7.17.0"
+ipdb = "^0.13.3"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
