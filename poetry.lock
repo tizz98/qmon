@@ -289,7 +289,7 @@ version = "2.8.5"
 [[package]]
 category = "dev"
 description = "Run a subprocess in a pseudo terminal"
-marker = "python_version >= \"3.4\" and sys_platform != \"win32\" or sys_platform != \"win32\" or python_version >= \"3.4\" and sys_platform != \"win32\" and (python_version >= \"3.4\" and sys_platform != \"win32\" or sys_platform != \"win32\")"
+marker = "python_version >= \"3.4\" and sys_platform != \"win32\" or sys_platform != \"win32\""
 name = "ptyprocess"
 optional = false
 python-versions = "*"
@@ -376,9 +376,9 @@ python-versions = "*"
 version = "0.2.5"
 
 [metadata]
-content-hash = "31a1540742ff500db5946baf3c5ed8caac08a42096841e632b63f668cf7d5e0c"
+content-hash = "37be02dd3791b885a1896b149f068a068431f93d90e7ecd6402854f26d4ee6de"
 lock-version = "1.0"
-python-versions = "^3.8"
+python-versions = "3.8.5"
 
 [metadata.files]
 appdirs = [
