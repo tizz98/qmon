@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>qmon</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+        integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
+        crossorigin="anonymous" />
+
+    <style type="text/css">
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <div class="four columns">
+            <h2>cpu</h2>
+            <div id="cpu">&mdash;</div>
+        </div>
+        <div class="four columns">
+            <h2>memory</h2>
+            <div id="mem">&mdash;</div>
+        </div>
+        <div class="four columns">
+            <h2>disk</h2>
+            <div id="disk">&mdash;</div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        const urls = {
+            cpu: "{% url 'api-cpu' %}",
+            mem: "{% url 'api-mem' %}",
+            disk: "{% url 'api-disk' %}",
+        };
+
+        const setValue = (id, value) => {
+            document.getElementById(id).innerText = value;
+        };
+
+        setInterval(() => {
+            Promise.all([
+                fetch(urls.cpu),
+                fetch(urls.mem),
+                fetch(urls.disk),
+            ])
+                .then((responses) => Promise.all(responses.map(r => r.json())))
+                .then(([cpu, mem, disk]) => {
+                    setValue("cpu", `${cpu.percent}%`);
+                    setValue("mem", `${mem.used_human} used`);
+                    setValue("disk", `${disk.percent_used}% full`);
+                });
+        }, 1000); // every 1s
+
+    </script>
+</body>
+
+</html>
