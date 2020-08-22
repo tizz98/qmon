@@ -6,7 +6,7 @@ authors = ["Elijah Wilson <dev.tizz98@gmail.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "3.8.5"
 django = "^3.1"
 djangorestframework = "^3.11.1"
 django-environ = "^0.4.5"
